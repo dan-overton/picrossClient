@@ -1,0 +1,22 @@
+.GamesList ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.GamesList ul li div {
+    display: inline-block;
+    background-color: #f8f8f6;
+    border: 1px solid lightskyblue;
+    height: 150px;
+    width: 150px;
+    line-height: 150px;
+    text-align: center;
+    border-radius: 5px;
+    margin: 15px;
+}
+
+.GamesList ul li a {
+    text-decoration: none;
+}

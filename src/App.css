@@ -1,0 +1,33 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 80px;
+  float:left;
+}
+
+.App-header h2 {
+  float: left;
+}
+
+.App-header {
+  background-color: #222;
+  height: 75px;
+  padding: 20px;
+  color: white;
+}
+
+.App-header a {
+  text-decoration: none;
+  color: white;
+}
+
+.App-header a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
