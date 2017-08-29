@@ -4,16 +4,14 @@
 
 .App-logo {
   height: 80px;
-  float:left;
 }
 
-.App-header h2 {
-  float: left;
+.App-header {
+  display: flex
 }
 
 .App-header {
   background-color: #222;
-  height: 75px;
   padding: 20px;
   color: white;
 }
