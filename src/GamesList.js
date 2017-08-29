@@ -7,7 +7,7 @@ class GamesList extends Component {
 
   componentDidMount()
   {
-    this.props.setTitle('Welcome to Picross!');
+    this.props.setTitle('Welcome to Picross!!');
   }
   
   render() {
