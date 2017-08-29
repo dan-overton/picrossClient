@@ -6,10 +6,6 @@ cache:
   - node_modules
 script:
   - npm run build
-before_deploy:
+after_success:
   - cd ./build
-deploy:
-  provider: azure_web_apps
-  verbose: true
-  local_dir: build
-  skip_cleanup: true
+  - find . -type f  -exec curl --user $FTP_USER:$FTP_PASS --ftp-create-dirs -T {} $FTP_HOST/site/wwwroot/{}
