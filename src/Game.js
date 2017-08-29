@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Loading from './Loading'
 
 CanvasRenderingContext2D.prototype.fillVerticalArrayText = function(textArray, x, y, verticalSpacing) {
-  for (var i = 0; i < textArray.length; i++) {
+  for (let i = 0; i < textArray.length; i++) {
       this.fillText(textArray[i], x, y + i * verticalSpacing);
   }
 }
