@@ -18,7 +18,7 @@ class Game extends Component {
   {
       var result = [];
 
-      for(var i = 0; i < sideLength; i++)
+      for(let i = 0; i < sideLength; i++)
       {
           var col = selector(answer, i);
 
