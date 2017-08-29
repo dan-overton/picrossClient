@@ -6,6 +6,8 @@ cache:
   - node_modules
 script:
   - npm run build
+before_deploy:
+  - cd ./build
 deploy:
   provider: azure_web_apps
   verbose: true
