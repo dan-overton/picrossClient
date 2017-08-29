@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+  - node_modules
+script:
+  - npm test
+  - npm run build
+deploy:
+  provider: azure_web_apps
+  username: picross_azu_deployment_user       # If AZURE_WA_USERNAME isn't set
+  password: azure_deployment_password   # If AZURE_WA_PASSWORD isn't set
+  verbose: true

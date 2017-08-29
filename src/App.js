@@ -8,14 +8,12 @@ import Game from './Game';
 import logo from './logo.svg';
 import './App.css';
 
-import { CALL_API} from './middleware/api'; 
+import { CALL_API } from './middleware/api'; 
 import { getGames, setTitle } from './actions';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.props.getGames();
+  componentWillMount() {
+    this.props.getGames();    
   }
 
   render() {
