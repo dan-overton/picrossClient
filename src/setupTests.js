@@ -1,0 +1,1 @@
+global['CanvasRenderingContext2D'] = {prototype: {}};

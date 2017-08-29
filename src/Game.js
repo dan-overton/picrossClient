@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'; 
 import Loading from './Loading'
 
 CanvasRenderingContext2D.prototype.fillVerticalArrayText = function(textArray, x, y, verticalSpacing) {
@@ -28,9 +27,9 @@ class Game extends Component {
           var current = 0;
           while(j < sideLength)
           {
-              if(col[j] == 0)
+              if(col[j] === 0)
               {
-                  if(current != 0)
+                  if(current !== 0)
                   {
                       counts.push(current);
                       current = 0;
@@ -44,7 +43,7 @@ class Game extends Component {
               j++;
           }
 
-          if(current != 0)
+          if(current !== 0)
           {
               counts.push(current);
               current = 0;
@@ -107,9 +106,9 @@ class Game extends Component {
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
 
-      for(var i = 0; i < rowCounts.length; i++)
+      for(let i = 0; i < rowCounts.length; i++)
       {
-          var text = '0';
+          let text = '0';
           if(rowCounts[i].length !== 0)
           {
               text = rowCounts[i].join(' ');
@@ -118,9 +117,9 @@ class Game extends Component {
           ctx.fillText(text, 100, rowCountsWidth + (squareLength / 2) +  (i * squareLength));
       }
 
-      for(var i = 0; i < colCounts.length; i++)
+      for(let i = 0; i < colCounts.length; i++)
       {
-          var text = [0];
+          let text = [0];
           if(colCounts[i].length !== 0)
           {
               text = colCounts[i];
@@ -133,11 +132,11 @@ class Game extends Component {
       ctx.fillStyle = "#000000";
       ctx.strokeStyle = "#5555FF";
 
-      for(var i = 0; i < sideLength; i++)
+      for(let i = 0; i < sideLength; i++)
       {
-          for(var j = 0; j < sideLength; j++)
+          for(let j = 0; j < sideLength; j++)
           {
-              if(game[(i * sideLength) + j] == 1)
+              if(game[(i * sideLength) + j] === 1)
               {
                   ctx.fillRect(rowCountsWidth + 1 + (j * squareLength), rowCountsWidth + 1 + (i * squareLength),squareLength-2,squareLength-2);
               }
@@ -183,7 +182,7 @@ class Game extends Component {
   {
     const answer = this.state.game.answer;    
     
-    for(var i = 0; i < answer.length; i++)
+    for(let i = 0; i < answer.length; i++)
     {
         if((board[i] === 0 || board[i] === 2) && answer[i] === 1)
         {
@@ -223,7 +222,7 @@ class Game extends Component {
         if(index !== -1)
         {
             mouseDown = true;
-            if(board[index] == 0)
+            if(board[index] === 0)
             {
                 if(event.nativeEvent.which === 3)
                 {
@@ -343,7 +342,7 @@ class Game extends Component {
   componentDidMount() {
     //required for load via route change
     if(!this.props.games.loading) {
-      var targetId = parseInt(this.props.match.params.id);
+      var targetId = parseInt(this.props.match.params.id, 10);
       var game = this.props.games.items.find(g => g.id === targetId);
 
       if(game) {
@@ -356,7 +355,7 @@ class Game extends Component {
 
   componentWillReceiveProps(nextProps) {
     if(this.props.games.loading && !nextProps.games.loading) {
-      var targetId = parseInt(this.props.match.params.id);
+      var targetId = parseInt(this.props.match.params.id, 10);
       var game = nextProps.games.items.find(g => g.id === targetId);
 
       if(game) {

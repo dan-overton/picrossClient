@@ -5,7 +5,7 @@ export default store => next => action => {
     	return next(action); 
   }
   let request = action[CALL_API]; 
-  let { method, path, query, failureType, successType, sendingType } = request;
+  let { method, path, failureType, successType, sendingType } = request;
   let { dispatch } = store; 
     
     dispatch({ type: sendingType }); 
