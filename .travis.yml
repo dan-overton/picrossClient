@@ -8,4 +8,4 @@ script:
   - npm run build
 after_success:
   - cd ./build
-  - find . -type f  -exec curl --user $FTP_USER:$FTP_PASS --ftp-create-dirs -T {} $FTP_HOST/site/wwwroot/{}
+  - find . -type f -exec curl --user $FTP_USER:$FTP_PASS --ftp-create-dirs -T {} $FTP_HOST/site/wwwroot/{} \;
